@@ -29,22 +29,23 @@ const advertising = document.querySelectorAll(".promo__adv img"),
       genre = poster.querySelector(".promo__genre"),
       movieList = document.querySelector(".promo__interactive-list");
 
-advertising.forEach(item => {
+
+advertising.forEach(item => { //1)
     item.remove();
 });
 
-genre.textContent = "драма";
+genre.textContent = "драма"; //2)
 
-poster.style.backgroundImage = "url('img/bg.jpg')";
+poster.style.backgroundImage = "url('img/bg.jpg')"; //3
 
-movieList.innerHTML = "";
+movieList.innerHTML = ""; //Обнуление
 
-movieDB.movies.sort();
+movieDB.movies.sort(); // 4)
 
-movieDB.movies.forEach( (film, i) => {
+movieDB.movies.forEach( (film, i) => { // 4,5)
     movieList.innerHTML += `
          <li class = "promo__interactive-item">
-            ${i + 1}. ${film}
+            ${i + 1}. ${film} 
             <div class = "delete"></div>
          </li>
     `;
